@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        form{
+            /* border: 1.5px solid rgb(41, 196, 247); */
+            box-shadow: 0px 0px 10px 5px rgb(41, 196, 247);
+            border-radius: 20px;
+            /* margin: auto; */
+            width: fit-content;
+            height: fit-content;
+            padding: 15px;
+            margin-left: 15%;
+            /* margin-top: 10%; */
+        }
+        h1{
+            /* border: 1.5px solid rgb(41, 196, 247); */
+            text-align: center;
+            margin: 5px;
+            
+        }
+        label{
+            font-size: normal;
+            font-weight: bold;
+        }
+        input{
+            border-radius: 10px;
+            height: 20px;
+            padding: 2px;
+            font-size: medium;
+        }
+        button{
+            width: 500px;
+            height: 30px;
+            line-height: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            margin-left: 10%;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color:rgb(162, 222, 241);
+            font-size: large;
+        }
+        div{
+            margin: 5px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        form span{
+            position: absolute;
+            margin-left: 39.5%;
+            font-size: larger;
+        }
+        form span:hover{
+            height: 30px;
+            width: 30px;
+            border-radius: 130px;
+            background-color: rgb(41, 196, 247);
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        body{
+            display: flex;
+            margin-top: 10%;
+        }
+        .total{
+            margin: auto;
+            margin-left: 19%;
+            width: 70%;
+            height: 500px;
+        }
+        .check{
+            display: flex;
+        }
+        .check #term{
+            margin-left: 30%;
+        }
+        .check a{
+            text-decoration: none;
+            color: black;
+        }
+        .check a:hover{
+            text-decoration: underline;
+            color: rgb(18, 123, 235);
+        }
+        .check h3{
+            margin-left: 5%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="total">
+    <form  action="http://localhost:8080/petminor/bookingmessage">
+        <span><b>&times;</b></span>
+        <hr>
+        <h1>PET CONSULTATION BOOKING FORM</h1><br><br>
+        <hr>
+        <label for="name">Full Name</label>&nbsp;&nbsp;
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+        <label for="email">Email Address</label>&nbsp;&nbsp;
+        <input type="email" id="email" name="email2" placeholder="Enter your email" required><br><br>
+        <label for="phn">Phone no.</label>&nbsp;&nbsp;
+        <input type="text" id="phn" name="phn" oninput="validate_phoneno()" placeholder="Enter your phone no." required><br><br>
+        <label for="petname">Pet's Name</label>&nbsp;&nbsp;
+        <input type="text" id="petname" name="petname" placeholder="Enter your pet name" required><br><br>
+        <strong><b>Type/Breed</b></strong>
+        <select name=petspec id=1>
+            <option>Select...</option>
+            <option>Golden Retrievers</option>
+            <option>Labrador Retrievers</option>
+            <option>German Shepherds</option>
+            <option>Beagles</option>
+            <option>Bulldogs</option>
+        </select><br><br>
+        <label for="age">Pet's Age</label>&nbsp;&nbsp;
+        <input type="text" id="age" name="age" placeholder="Enter your pet's age" required><br><br>
+        <label for="weight">Pet's Weight</label>&nbsp;&nbsp;
+        <input type="text" id="weight" name="weight" placeholder="Enter your pet's weight" required><br><br>
+        <strong><b>Gender</b></strong>
+        <input type="radio" id="male" name="gender">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender">
+        <label for="female">Female</label><br><br>
+        <p><b><label for="issues">Health Concerns/Notes:</label></b></p>
+        <textarea id="issues" name="issues" rows="4" cols="50"></textarea><br><br>
+        <strong><b>Date for consultation</b></strong>
+        <input type="date" id="date" name="date" required><br><br>
+        <strong><b>Doctors:</b></strong><br>
+        <input type="radio" id="doc1" name="doc" required>
+        <label for="doc1">Chandrakanta Chakraborty</label><br>
+        <li>Specialty: General Veterinary Medicine</li>
+        <li>Availability: Monday to Friday, 9:00 AM - 5:00 PM</li>
+        <li>Fees: 500/-</li>
+        <input type="radio" id="doc2" name="doc" required>
+        <label for="doc2">Alokesh Paul</label><br>
+        <li>Specialty: Orthopedic Surgery for Pets</li>
+        <li>Availability: Tuesday and Thursday, 1:00 PM - 7:00 PM</li>
+        <li>Fees: 1000/-</li>
+        <input type="radio" id="doc3" name="doc" required>
+        <label for="doc3">Avijit Bera</label>
+        <li>Specialty: Feline Medicine</li>
+        <li>Availability: Monday, Wednesday, Friday, 10:00 AM - 6:00 PM</li>
+        <li>Fees: 750/-</li>
+        <input type="radio" id="doc4" name="doc" required>
+        <label for="doc4">Gourab Dutta</label>
+        <li>Specialty: Exotic Pets Care</li>
+        <li>Availability: Tuesday and Thursday, 10:00 AM - 6:00 PM</li>
+        <li>Fees: 650/-</li><br><br>
+        <div class="check">
+            <input type="checkbox" id="term" oninput="" required><h3><a href="#">Terms & Conditions</a></h3>
+            </div>
+        <button type="submit" onclick="validate_button()"><b>Make Payment</b></button>
+    </form>
+</div>
+    <script>
+        function validate_button(){
+            var no=document.getElementById("phn").value
+            if(isNaN(no))
+            {
+                alert("Please enter a valid number")
+            }
+            else if(no.length>10 || no.length<10){
+                alert("Please enter a valid number")
+            }
+            else{
+                // document.getElementById("msg_bttn").style.backgroundColor="rgb(162, 222, 241)"
+                // document.getElementById("msg_bttn").style.color="black"
+                document.getElementById("msg_bttn").innerHTML=""
+                
+            }
+        }
+        function validate_phoneno()
+        {
+            var no=document.getElementById("phn").value
+            if(isNaN(no))
+            {
+                document.getElementById("msg_phoneno").style.backgroundColor="rgb(162, 222, 241)"
+                document.getElementById("msg_phoneno").style.color="black"
+                document.getElementById("msg_phoneno").innerHTML="Please enter a valid number"
+            }
+            else if(no.length==10){
+                document.getElementById("msg_phoneno").style.backgroundColor="rgb(162, 222, 241)"
+                document.getElementById("msg_phoneno").style.color="black"
+                document.getElementById("msg_phoneno").innerHTML="Your number is valid" 
+                }
+            else if(no.length>10){
+                document.getElementById("msg_phoneno").style.backgroundColor="rgb(162, 222, 241)"
+                document.getElementById("msg_phoneno").style.color="black"
+                document.getElementById("msg_phoneno").innerHTML="Please enter a valid number"
+            }
+            else{
+                document.getElementById("msg_phoneno").style.backgroundColor="rgb(162, 222, 241)"
+                document.getElementById("msg_phoneno").style.color="black"
+                document.getElementById("msg_phoneno").innerHTML="Your number is still counting"
+            }
+        }
+    </script>
+</body>
+</html>

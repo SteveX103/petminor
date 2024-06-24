@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+            /* border: 1.5px solid rgb(41, 196, 247); */
+            box-shadow: 0px 0px 10px 5px rgb(41, 196, 247);
+            border-radius: 20px;
+            /* margin: auto; */
+            width: fit-content;
+            height: fit-content;
+            padding: 15px;
+            margin-left: 15%;
+            /* margin-top: 10%; */
+        }
+        h1{
+            /* border: 1.5px solid rgb(41, 196, 247); */
+            text-align: center;
+            margin: 5px;
+            
+        }
+        label{
+            font-size: larger;
+            position: relative;
+            top:0px;
+            left:185px;
+        }
+        input{
+            border-radius: 10px;
+            height: 30px;
+            padding: 5px;
+            font-size: medium;
+            margin: 0px 181px;
+            width: 211px;
+        }
+        button{
+            width: 200px;
+            height: 30px;
+            line-height: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            margin-left: 37%;
+            transition: all 0.6s;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color:rgb(162, 222, 241);
+            font-size: large;
+        }
+        body{
+            display: flex;
+            margin-top: 10%;
+            background: url('dog bac.avif');
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+        }
+</style>
+<body>
+    <form  action="http://localhost:8080/petminor/verifyemail">
+        <h1>here you give your email to send a link for verify</h1><br>
+        <label for="email">Email</label>&nbsp;&nbsp;
+        <input type="text" id="email" name="email1" placeholder="enter your Email.." required><br><br>
+        <button type="submit">Send link</button>
+</body>
+</html>
